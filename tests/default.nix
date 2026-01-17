@@ -20,7 +20,7 @@ with pkgs.lib; let
     tests;
 
   # Fold the list back into a single set
-  testsAttrs = fold (x: y: recursiveUpdate x y) {} testsList;
+  testsAttrs = foldr (x: y: recursiveUpdate x y) {} testsList;
 
   # Remove skipped tests
   allTests = builtins.removeAttrs testsAttrs skipTests;

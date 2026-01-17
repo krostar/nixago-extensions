@@ -19,4 +19,4 @@ with pkgs.lib; let
     })
     exts;
 in
-  fold (x: y: pkgs.lib.recursiveUpdate x y) {} extList
+  foldr (x: y: pkgs.lib.recursiveUpdate x y) {} extList
