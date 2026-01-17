@@ -1,5 +1,4 @@
-{ runTest }:
-let
+{runTest}: let
   name = "pre-commit";
   expected = ./expected.yml;
   input = {
@@ -10,6 +9,6 @@ let
     };
   };
 in
-runTest {
-  inherit input expected name;
-}
+  runTest {
+    inherit input expected name;
+  }

@@ -1,11 +1,10 @@
-{ runTest }:
-let
+{runTest}: let
   name = "lefthook";
   expected = ./expected.yml;
   input = {
     commit-msg = {
       scripts = {
-        template_checker = { runner = "bash"; };
+        template_checker = {runner = "bash";};
       };
     };
     pre-commit = {
@@ -23,11 +22,11 @@ let
         };
       };
       scripts = {
-        "good_job.js" = { runner = "node"; };
+        "good_job.js" = {runner = "node";};
       };
     };
   };
 in
-runTest {
-  inherit input expected name;
-}
+  runTest {
+    inherit input expected name;
+  }

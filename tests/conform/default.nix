@@ -1,5 +1,4 @@
-{ runTest }:
-let
+{runTest}: let
   name = "conform";
   expected = ./expected.yml;
   input = {
@@ -34,6 +33,6 @@ let
     };
   };
 in
-runTest {
-  inherit input expected name;
-}
+  runTest {
+    inherit input expected name;
+  }
